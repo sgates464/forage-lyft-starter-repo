@@ -1,5 +1,7 @@
 from abc import ABC
 
-class Tires(ABC):
+class Battery(ABC):
     def needs_service(self):
         pass
+
+    

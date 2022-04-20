@@ -1,16 +1,10 @@
+from serviceable import Serviceable
 
-
-
-from abc import ABC, abstractmethod
-
-
-#create Car class with engine, battery, and tire attributes and needs_service method
-class Car(ABC):
+class Car(Serviceable):
     def __init__(self, engine, battery, tires):
         self.engine = engine
         self.battery = battery
         self.tires = tires
     
-    @abstractmethod
     def needs_service(self):
-        pass
+        return self.engine.needs_service() or self.battery.needs_service() or self.tires.needs_service()
